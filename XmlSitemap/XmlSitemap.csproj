@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>HalloJoe.XmlSitemap</AssemblyName>
+    <RootNamespace>HalloJoe.XmlSitemap</RootNamespace>
+    <Description>A tool for loading and reading XmlSitemaps.</Description>
+    <PackageReleaseNotes />
+    <PackageTags>XmlSitemap,robots.txt</PackageTags>
+    <Version>0.1.0</Version>
+    <Authors>Casper Korsgaard</Authors>
+    <Company>HalloJoe</Company>
+    <RepositoryUrl>https://github.com/hallojoe/XmlSitemap.git</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/hallojoe/XmlSitemap/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/hallojoe/XmlSitemap</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HalloJoe.RobotsTxt" Version="0.1.0" />
+  </ItemGroup>
+
+</Project>

@@ -27,7 +27,5 @@ namespace HalloJoe.XmlSitemap
         internal const string ACCEPT = "accept"; // accept header name
         internal const string TEXT_PLAIN = "text/plain"; // mime txt
         internal const string TEXT_XML = "text/xml"; // mime xml
-
-
     }
 }

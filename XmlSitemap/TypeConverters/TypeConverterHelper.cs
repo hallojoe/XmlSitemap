@@ -9,7 +9,7 @@ namespace HalloJoe.XmlSitemap.TypeConverters
 {
     internal static class TypeConverterHelper
     {
-        internal static T FromString<T>(string s)
+        internal static T FromString<T>(string s) // where T : IComposedList<ISitemapEntity>
         {
             var type = typeof(T);
             var serializer = new XmlSerializer(type);
@@ -17,15 +17,15 @@ namespace HalloJoe.XmlSitemap.TypeConverters
                 return (T)serializer.Deserialize(sr);
         }
 
-        internal static string ToString(IComposedList<ISitemapEntity> sitemap)
+        internal static string ToString<T>(T o) // where T : IComposedList<ISitemapEntity>
         {
             string result = string.Empty;
-            if (sitemap != null)
+            if (o != null)
                 using (var stringWriter = new Utf8StringWriter())
                 {
-                    Type type = sitemap.GetType();
+                    Type type = typeof(T);
                     XmlSerializer xmlSerialiser = new XmlSerializer(type);
-                    xmlSerialiser.Serialize(stringWriter, type);
+                    xmlSerialiser.Serialize(stringWriter, o);
                     result = stringWriter.ToString();
                 }
             return result;

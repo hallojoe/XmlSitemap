@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlSitemap", "XmlSitemap\XmlSitemap.csproj", "{27CA3830-A77D-448F-A25E-77A8B2F47548}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestXmlSitemap", "UnitTestXmlSitemap\UnitTestXmlSitemap.csproj", "{10F464E7-F3A5-402F-A29F-C329E3955799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{27CA3830-A77D-448F-A25E-77A8B2F47548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27CA3830-A77D-448F-A25E-77A8B2F47548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27CA3830-A77D-448F-A25E-77A8B2F47548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F464E7-F3A5-402F-A29F-C329E3955799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F464E7-F3A5-402F-A29F-C329E3955799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F464E7-F3A5-402F-A29F-C329E3955799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F464E7-F3A5-402F-A29F-C329E3955799}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

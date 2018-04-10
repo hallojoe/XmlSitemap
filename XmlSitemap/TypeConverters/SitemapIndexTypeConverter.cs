@@ -47,10 +47,19 @@ namespace HalloJoe.XmlSitemap.TypeConverters
         /// <returns></returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            SitemapIndex sitemapIndex = (SitemapIndex)value;
+            var sitemapIndex = (SitemapIndex)value;
+            string result = string.Empty;
             if (sitemapIndex != null)
-                TypeConverterHelper.ToString((IComposedList<ISitemapEntity>)sitemapIndex);
-            return base.ConvertTo(context, culture, value, destinationType);
+            {
+                using (var stringWriter = new Utf8StringWriter())
+                {
+                    Type type = typeof(SitemapIndex);
+                    XmlSerializer xmlSerialiser = new XmlSerializer(type);
+                    xmlSerialiser.Serialize(stringWriter, sitemapIndex);
+                    result = stringWriter.ToString();
+                }
+            }
+            return result;
         }
 
         /// <summary>

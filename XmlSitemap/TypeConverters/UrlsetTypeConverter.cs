@@ -9,7 +9,7 @@ using HalloJoe.XmlSitemap.Models;
 
 namespace HalloJoe.XmlSitemap.TypeConverters
 {
-    public class SitemapTypeConverter : TypeConverter
+    public class UrlsetTypeConverter : TypeConverter
     {
         /// <summary>
         /// Validate value
@@ -55,10 +55,24 @@ namespace HalloJoe.XmlSitemap.TypeConverters
         /// <returns></returns>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            Sitemap sitemap = (Sitemap)value;
-            if (sitemap != null)
-                return TypeConverterHelper.ToString((IComposedList<ISitemapEntity>)sitemap);
-                   return base.ConvertTo(context, culture, value, destinationType);
+            //var urlset = (Urlset)value;
+            //if (urlset != null)
+            //    return TypeConverterHelper.ToString(urlset);
+            //       return base.ConvertTo(context, culture, value, destinationType);
+            var sitemapIndex = (Urlset)value;
+            string result = string.Empty;
+            if (sitemapIndex != null)
+            {
+                using (var stringWriter = new Utf8StringWriter())
+                {
+                    Type type = typeof(Urlset);
+                    XmlSerializer xmlSerialiser = new XmlSerializer(type);
+                    xmlSerialiser.Serialize(stringWriter, sitemapIndex);
+                    result = stringWriter.ToString();
+                }
+            }
+            return result;
+
         }
 
         /// <summary>
@@ -72,7 +86,7 @@ namespace HalloJoe.XmlSitemap.TypeConverters
         {
             if (!(value is string))
                 return base.ConvertFrom(context, culture, value);
-            return TypeConverterHelper.FromString<Sitemap>(value.ToString());
+            return TypeConverterHelper.FromString<Urlset>(value.ToString());
         }
 
     }

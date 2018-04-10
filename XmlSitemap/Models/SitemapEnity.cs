@@ -11,7 +11,9 @@ namespace HalloJoe.XmlSitemap.Models
         public string LastModified { get; set; }
         [XmlElement(Constants.CHANGEFREQ)]
         public string ChangeFrequency { get; set; }
+        public bool ShouldSerializeChangeFrequency() => !string.IsNullOrEmpty(ChangeFrequency);
         [XmlElement(Constants.PRIORITY)]
         public string Priority { get; set; }
+        public bool ShouldSerializePriority() => !string.IsNullOrEmpty(Priority);
     }
 }

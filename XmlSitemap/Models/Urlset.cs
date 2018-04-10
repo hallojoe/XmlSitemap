@@ -8,8 +8,8 @@ using HalloJoe.XmlSitemap.TypeConverters;
 namespace HalloJoe.XmlSitemap.Models
 {
     [XmlRoot(Constants.URLSET, Namespace = Constants.NS)]
-    [TypeConverter(typeof(SitemapTypeConverter))]
-    public class Sitemap : IComposedList<SitemapEntity>
+    [TypeConverter(typeof(UrlsetTypeConverter))]
+    public class Urlset : IComposedList<SitemapEntity>
     {
         [XmlElement(Constants.URL, Type = typeof(SitemapEntity))]
         public List<SitemapEntity> Entities { get; set; } = new List<SitemapEntity>();

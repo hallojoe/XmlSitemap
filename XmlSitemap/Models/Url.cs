@@ -10,18 +10,21 @@ namespace HalloJoe.XmlSitemap.Models
         public virtual string Location { get; set; }
 
         public BaseUrl(string location) { Location = location; }
-        public BaseUrl() : this(string.Empty) { } 
+        public BaseUrl() : this(string.Empty) { }
         protected virtual string GetBaseUrl(string url) =>
             string.IsNullOrEmpty(url) ? string.Empty : new Uri(new Uri(url).GetLeftPart(UriPartial.Authority)).ToString();
     }
 
-    public class Url : BaseUrl, IUrl { }
+    public class Url : BaseUrl, IUrl
+    {
+        public Url(string location) : base(location) { }
+    }
+
     public class RobotsTxtUrl : BaseUrl, IUrl
     {
-        public RobotsTxtUrl(string location) : base(location)
+        public RobotsTxtUrl(string location)
         {
             Location = GetBaseUrl(Location) + "/robots.txt";
         }
     }
-    public class SitemapUrl : BaseUrl, IUrl { }
 }

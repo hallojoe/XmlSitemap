@@ -15,5 +15,3 @@ namespace HalloJoe.XmlSitemap.Interfaces
         string Priority { get; set; }
     }
 }
-
-

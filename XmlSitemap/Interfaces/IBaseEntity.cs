@@ -10,6 +10,22 @@ namespace HalloJoe.XmlSitemap.Interfaces
     public interface IBaseEntity
     {
         string Location { get; set; }
+    }
+
+    public interface IBaseEntity2
+    {
+        string Location { get; set; }
         string LastModified { get; set; }
+    }
+
+    public interface ILastModifiedEntity : IBaseEntity
+    {
+        string LastModified { get; set; }
+    }
+
+    public interface IUrlEntity
+    {
+        string ChangeFrequency { get; set; }
+        string Priority { get; set; }
     }
 }

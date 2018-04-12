@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="HalloJoe.RobotsTxt" Version="0.1.0" />
+    <PackageReference Include="System.Xml.XPath.XDocument" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>

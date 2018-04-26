@@ -4,7 +4,8 @@ A (.NET Standard 2.0) tool for reading xml sitemapindexes and sitemaps - Work in
 The tool currently supports:
 
  - Read sitemap index
-
+ - Read sitemap urlset
+ 
 ## Install
 Install using NuGet
 
